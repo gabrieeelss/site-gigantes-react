@@ -1,0 +1,250 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #72b8f5;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a,
+.nav-item > button {
+  display: flex; /* Usar flexbox para centralizar conteúdo */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  height: 40px; /* Altura fixa para todos os itens do menu */
+  padding: 0 15px; /* Ajusta o padding horizontal */
+  text-decoration: none;
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-item > a:hover,
+.nav-item > button:hover {
+  background-color: #cde4f7;
+  color: #0077b6;
+}
+
+/* DROPDOWN (desktop) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #e3eaf0;
+  padding: 5px;
+  list-style: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 15px;
+  color: #2c3e50;
+  font-size: 18px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #cde4f7;
+  color: #0077b6;
+}
+
+/* Garante que o dropdown-toggle tenha a mesma aparência de um nav-link */
+.nav-list .dropdown-toggle {
+  font-weight: 500;
+  /* Não precisa de regras adicionais aqui se .nav-item > a já cobrir */
+}
+
+/* Ícone do menu */
+.mobile-menu-icon {
+  display: block;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #2c3e50;
+  z-index: 1001;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-icon {
+    display: none;
+  }
+
+  .nav-item.dropdown:hover > .dropdown-menu { /* Adicionado .dropdown para maior especificidade */
+    display: block;
+  }
+}
+
+/* Menu Mobile container */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: #72b8f5;
+  padding: 5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  border-radius: 8px;
+  z-index: 1000;
+  transition: max-height 0.5s ease-in-out; /* Transição para max-height */
+  overflow: hidden; /* Esconde o conteúdo que transborda */
+  max-height: 0; /* Inicia fechado */
+}
+
+.mobile-menu.open {
+  display: flex;
+  max-height: 700px; /* Altura suficiente para mostrar o menu */
+}
+
+/* Lista de navegação */
+.mobile-menu .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha os itens ao início (esquerda) */
+  justify-content: flex-start; /* Garante que o conteúdo da lista também inicie à esquerda */
+}
+
+.mobile-menu .nav-item {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.mobile-menu .nav-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Links e botões do menu mobile */
+.mobile-menu .nav-item > a,
+.mobile-menu .nav-item > button {
+  display: flex;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+  color: rgb(230, 230, 230);
+  background-color: #004080;
+  border-radius: 8px;
+  transition: background 0.3s;
+  border: 1px solid #dbdbdb;
+  text-align: left; /* Alinha o texto à esquerda dentro do botão/link */
+  font-weight: 500;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Botão dropdown mobile */
+.mobile-menu .dropdown-toggle::after {
+  content: " ▼";
+  font-size: 20px;
+  float: right; /* Alinha o triângulo à direita */
+  transition: transform 0.3s ease;
+}
+
+/* Rotação do ícone de dropdown quando aberto */
+.mobile-menu .dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+/* Submenu dropdown mobile */
+.mobile-menu .dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #e9e9e9;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #6d6d6d;
+  width: calc(100% - 20px); /* Ocupa a largura total menos um padding */
+  margin: 10px 10px 0; /* Centraliza e adiciona margem superior */
+}
+
+.mobile-menu .dropdown-menu li {
+  padding: 6px 0;
+}
+
+.mobile-menu .dropdown-menu.open {
+  display: flex;
+}
+
+.mobile-menu .dropdown-menu li a {
+  padding: 8px 12px;
+  font-size: 19px;
+  color: #e4e4e4;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+  background-color: #004080;
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 767px) { /* Usei 767px para evitar sobreposição no 768px */
+  .desktop-menu {
+    display: none;
+  }
+
+  /* Não é necessário .mobile-menu .nav-list aqui, já está definido acima */
+
+  .logo {
+    display: none; /* Se a logo some no mobile */
+  }
+
+  .nav-bar { /* Ajuste o alinhamento da nav-bar no mobile se a logo sumir */
+    justify-content: flex-end; /* Alinha o ícone do menu à direita */
+  }
+
+  header {
+    justify-content: flex-end; /* Alinha o ícone do menu à direita */
+  }
+}

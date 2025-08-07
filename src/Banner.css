@@ -1,0 +1,150 @@
+/* HERO CAROUSEL */
+.hero-carousel {
+  background-color: #004080;
+  padding: 3rem 1rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-carousel-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Carrossel */
+.carousel-wrapper {
+  position: relative;
+  flex: 1 1 60%;
+  max-width: 700px;
+  overflow: hidden;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  list-style: none;
+}
+
+.carousel-slide {
+  min-width: 50%;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Texto ao lado */
+.hero-text {
+  flex: 1 1 30%;
+  max-width: 400px;
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+  background-color: #54b754;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-cta:hover {
+  background-color: #3d8b3d;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-carousel-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+  }
+} 
+.hero-carousel-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-image-between img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
+.img-neon-svg {
+  animation: neonPulse 1.5s infinite alternate;
+  filter: drop-shadow(0 0 5px #0ff);
+}
+
+@keyframes neonPulse {
+  0% {
+    filter: drop-shadow(0 0 5px #0ff) drop-shadow(0 0 10px #0ff);
+  }
+  100% {
+    filter: drop-shadow(0 0 15px #0ff) drop-shadow(0 0 30px #0ff);
+  }
+}
+
+.social-icons img {
+    margin: 5px;
+    width: 50px;
+}

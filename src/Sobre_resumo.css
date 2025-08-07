@@ -1,0 +1,67 @@
+section {
+  padding: 1rem 1rem;
+}
+
+.resumo, .noticias-index, .galeria, .participe {
+  background-color: rgba(255, 255, 255, 0.948);
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 95%;
+}
+
+h2 {
+  color: #004080;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Resumo */
+.resumo p {
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.btn-link {
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  color: #004080;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Notícias */
+.noticias ul { /* Correção: a classe no HTML é noticias-index, mas essa regra é genérica para 'noticias' */
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  list-style: none;
+}
+
+.noticias ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.noticias ul li strong {
+  color: #004080;
+}
+
+/* Participe */
+.participe p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.participe .btn-cta {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+  margin-top: 1rem;
+}
