@@ -1,7 +1,7 @@
 .rodape {
   background-color: #72b8f5;
   color: #000000;
-  padding: 30px 20px;
+  padding: 20px 20px;
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -29,6 +29,17 @@
 .rodape-centro {
   flex: 1;
 }
+.img-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.img-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
 .img-right img {
   width: 200px;
@@ -36,7 +47,7 @@
 }
 
 .img-left img {
-  width: 300px;
+  width: 350px;
   height: auto;
 }
 
@@ -74,7 +85,7 @@
 
 .contato-social img {
   width: 30px;
-  height: 30px;
+  height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
   margin: 0.2rem;
 }
@@ -84,3 +95,9 @@
   transform: scale(1.3);
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: #000000;
+  margin-bottom: 0;
+}

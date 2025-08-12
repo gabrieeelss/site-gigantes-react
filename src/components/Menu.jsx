@@ -21,7 +21,7 @@ function Menu() {
     <header>
       <nav className="nav-bar">
         <div className="logo">
-          <a href="index.html">
+          <a href="/">
             <img src="./src/assets/img/geral/aecs_logo.png" alt="AECS Gigantes Logo" />
           </a>
         </div>
@@ -32,7 +32,7 @@ function Menu() {
               Sobre
             </a>
             <ul className="dropdown-menu">
-              <li><a href="sobre.html">Sobre a Associação</a></li>
+              <li><a href="/Sobre">Sobre a Associação</a></li>
               <li><a href="organograma.html">Organograma</a></li>
               <li><a href="perguntasfrequentes.html">Perguntas Frequentes</a></li>
             </ul>
@@ -68,7 +68,7 @@ function Menu() {
 
       <nav id="mobile-menu" className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul className="nav-list">
-          <li className="nav-item"><a href="index.html">Home</a></li>
+          <li className="nav-item"><a href="/Home">Home</a></li>
           <li className="nav-item dropdown">
             <button 
               className="nav-link dropdown-toggle" 
@@ -79,7 +79,7 @@ function Menu() {
               Sobre
             </button>
             <ul className={`dropdown-menu ${openDropdown === 'sobre' ? 'open' : ''}`}>
-              <li><a href="sobre.html">Sobre a Associação</a></li>
+              <li><a href="/Sobre">Sobre a Associação</a></li>
               <li><a href="organograma.html">Organograma</a></li>
               <li><a href="perguntasfrequentes.html">Perguntas Frequentes</a></li>
             </ul>

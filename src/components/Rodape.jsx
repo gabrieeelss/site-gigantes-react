@@ -4,6 +4,7 @@ function Rodape() {
 
   return (
     <>
+    <hr />
       <footer className="rodape">
     <div className="container rodape-flex">
       <div className="img-left">

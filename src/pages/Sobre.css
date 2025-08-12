@@ -1,0 +1,65 @@
+/* Box branco com conteúdo */
+.box-sobre {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Seção com fundo de imagem e camada escura */
+.sobre-com-fundo {
+  background-image: url('..src/img/geral/fundo-gigantes1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  position: relative;
+  flex-grow: 1;
+}
+
+.sobre-com-fundo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* camada escura */
+  z-index: 1;
+}
+
+.texto-sobre h1{
+  color: #004080;
+  text-align: center;
+  padding: 1rem;
+}
+
+.texto-sobre h2{
+  color: #004080;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+.box-sobre ul {
+  list-style: disc inside;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.texto-sobre p {
+  text-align: justify;
+}
+
+/* Citação */
+.box-sobre blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #004080;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
