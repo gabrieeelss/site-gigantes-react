@@ -33,8 +33,8 @@ function Menu() {
             </a>
             <ul className="dropdown-menu">
               <li><a href="/Sobre">Sobre a Associação</a></li>
-              <li><a href="organograma.html">Organograma</a></li>
-              <li><a href="perguntasfrequentes.html">Perguntas Frequentes</a></li>
+              <li><a href="/Organograma">Organograma</a></li>
+              <li><a href="/PerguntasFrequentes">Perguntas Frequentes</a></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -42,17 +42,17 @@ function Menu() {
               Transparência
             </a>
             <ul className="dropdown-menu">
-              <li><a href="contabilidade.html">Relatórios Contábeis</a></li>
-              <li><a href="prestacaodecontas.html">Prestação de Contas</a></li>
-              <li><a href="atasestatuto.html">Atas e Estatuto</a></li>
-              <li><a href="certificados.html">Certificados em Geral</a></li>
+              <li><a href="/Contabilidade">Relatórios Contábeis</a></li>
+              <li><a href="/PrestacaoDeContas">Prestação de Contas</a></li>
+              <li><a href="/AtasEEstatuto">Atas e Estatuto</a></li>
+              <li><a href="/Certificados">Certificados em Geral</a></li>
             </ul>
           </li>
-          <li className="nav-item"><a href="equipe.html" className="nav-link">Equipe</a></li>
-          <li className="nav-item"><a href="projetos.html" className="nav-link">Projetos</a></li>
-          <li className="nav-item"><a href="titulos.html" className="nav-link">Títulos</a></li>
-          <li className="nav-item"><a href="noticias.html" className="nav-link">Notícias</a></li>
-          <li className="nav-item"><a href="contato.html" className="nav-link">Contato</a></li>
+          <li className="nav-item"><a href="/Equipe" className="nav-link">Equipe</a></li>
+          <li className="nav-item"><a href="/Projetos" className="nav-link">Projetos</a></li>
+          <li className="nav-item"><a href="/Titulos" className="nav-link">Títulos</a></li>
+          <li className="nav-item"><a href="/Noticias" className="nav-link">Notícias</a></li>
+          <li className="nav-item"><a href="/Contato" className="nav-link">Contato</a></li>
         </ul>
 
         <button 
@@ -80,8 +80,8 @@ function Menu() {
             </button>
             <ul className={`dropdown-menu ${openDropdown === 'sobre' ? 'open' : ''}`}>
               <li><a href="/Sobre">Sobre a Associação</a></li>
-              <li><a href="organograma.html">Organograma</a></li>
-              <li><a href="perguntasfrequentes.html">Perguntas Frequentes</a></li>
+              <li><a href="/Organograma">Organograma</a></li>
+              <li><a href="/PerguntasFrequentes">Perguntas Frequentes</a></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -94,17 +94,17 @@ function Menu() {
               Transparência
             </button>
             <ul className={`dropdown-menu ${openDropdown === 'transparencia' ? 'open' : ''}`}>
-              <li><a href="contabilidade.html">Relatórios Contábeis</a></li>
-              <li><a href="prestacaodecontas.html">Prestação de Contas</a></li>
-              <li><a href="atasestatuto.html">Atas e Estatuto</a></li>
-              <li><a href="certificados.html">Certificados em Geral</a></li>
+              <li><a href="/Contabilidade">Relatórios Contábeis</a></li>
+              <li><a href="/PrestacaoDeContas">Prestação de Contas</a></li>
+              <li><a href="/AtasEEstatutos">Atas e Estatuto</a></li>
+              <li><a href="/Certificados">Certificados em Geral</a></li>
             </ul>
           </li>
-          <li className="nav-item"><a href="equipe.html" className="nav-link">Equipe</a></li>
-          <li className="nav-item"><a href="projetos.html" className="nav-link">Projetos</a></li>
-          <li className="nav-item"><a href="titulos.html" className="nav-link">Títulos</a></li>
-          <li className="nav-item"><a href="noticias.html" className="nav-link">Notícias</a></li>
-          <li className="nav-item"><a href="contato.html" className="nav-link">Contato</a></li>
+          <li className="nav-item"><a href="/Equipe" className="nav-link">Equipe</a></li>
+          <li className="nav-item"><a href="/Projetos" className="nav-link">Projetos</a></li>
+          <li className="nav-item"><a href="/Titulos" className="nav-link">Títulos</a></li>
+          <li className="nav-item"><a href="/Noticias" className="nav-link">Notícias</a></li>
+          <li className="nav-item"><a href="/Contato" className="nav-link">Contato</a></li>
         </ul>
       </nav>
     </header>

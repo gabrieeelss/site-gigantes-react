@@ -15,7 +15,7 @@
 
 /* Seção com fundo de imagem e camada escura */
 .sobre-com-fundo {
-  background-image: url('..src/img/geral/fundo-gigantes1.jpg');
+  background-image: url('../src/assets/img/geral/fundo-gigantes1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

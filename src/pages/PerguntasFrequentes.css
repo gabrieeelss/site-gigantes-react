@@ -1,0 +1,84 @@
+
+.topo {
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.topo p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.container-faq {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #165493;
+  color: white;
+  padding: 15px 20px;
+  font-size: 16px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #0055aa;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px 20px;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 15px;
+  border-top: 1px solid #ccc;
+}
+.faq-titulo {
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
+}
+/*IMAGEM NO TITULO*/
+.titulo-header {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 16px; /* espaço entre imagem e texto */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* garante quebra no mobile */
+}
+
+.titulo-img {
+  width: 70px; /* ou o tamanho desejado */
+  height: auto;
+  padding-top: 1.5rem;
+  
+}
+
+.titulo-header-h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  align-items: center;
+}
