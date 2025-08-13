@@ -52,9 +52,6 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .card:hover {
@@ -70,7 +67,7 @@ body {
 
 .card h3 {
   font-size: 1.1rem;
-  margin: 10px 16px;
+  margin: 10px 16px 10px;
   color: #ffffffd6;
   text-align: center;
 }
@@ -101,6 +98,14 @@ body {
   position: relative;
   margin-top: 50px; /* Afasta o modal do topo */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 8px;
 }
 
 .modal-content .fechar {
