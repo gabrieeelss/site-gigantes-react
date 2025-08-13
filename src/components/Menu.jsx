@@ -44,7 +44,7 @@ function Menu() {
             <ul className="dropdown-menu">
               <li><a href="/Contabilidade">Relatórios Contábeis</a></li>
               <li><a href="/PrestacaoDeContas">Prestação de Contas</a></li>
-              <li><a href="/AtasEEstatuto">Atas e Estatuto</a></li>
+              <li><a href="/AtasEEstatutos">Atas e Estatuto</a></li>
               <li><a href="/Certificados">Certificados em Geral</a></li>
             </ul>
           </li>

@@ -1,0 +1,7 @@
+[
+  { "categoria": "FIEC", "nome": "Edital 04/2022 (em fase de prestação de Contas)", "arquivo": "pdfs/fiec-2023.pdf" },
+  { "categoria": "CBCP", "nome": "Edital 02/2024 - Campeonato Brasileiro", "arquivo": "arquivos/prestacao-de-contas/cbcp/edital2-campeonato-brasileiro-2024.pdf" },
+  { "categoria": "CBCP", "nome": "Edital 02/2024 - Torneio de Penápolis", "arquivo": "arquivos/prestacao-de-contas/cbcp/edital2-projeto-torneio-de-penapolis.pdf" },
+  { "categoria": "CBCP", "nome": "Edital 02/2024 - Copa dos Campeões e TryOut", "arquivo": "arquivos/prestacao-de-contas/cbcp/edital2-projeto-copa-dos-campeoes-2024.pdf" },
+  { "categoria": "Lei Federal", "nome": "Em Captação", "arquivo": "pdfs/leifederal-2022.pdf" }
+]

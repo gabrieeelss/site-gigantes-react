@@ -1,0 +1,99 @@
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 1.5rem;
+  }
+  
+  .pdf-coluna h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+  }
+  
+  .pdf-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pdf-lista li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+    color: white;
+    margin-left: 1.3rem;
+  }
+  
+  .pdf-lista a {
+    text-decoration: none;
+    color: #ebebeb;
+    
+  }
+  
+  .pdf-lista a:hover {
+    text-decoration: underline;
+  }
+  
+  .pdf-coluna {
+    background: #1e3c64;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(255, 255, 255);
+    margin: 40px auto;
+    width: fit-content;
+    max-width: 100%;
+  }
+  .titulo-h1,
+  .subtitulo-p {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .titulo-h1 {
+    padding: 1rem;
+  }
+  
+  .subtitulo-p {
+    padding-bottom: 2rem;
+  }
+  
+  .pdf-coluna-atas {
+    width: fit-content;
+    max-width: 100%;
+    margin: auto;
+  }
+  .pdf-coluna-certificados {
+    width: fit-content;
+    max-width: 100%;
+    margin: auto; /* Centraliza o card na página */
+  }
+  
+  /*IMAGEM NO TITULO*/
+  .titulo-header {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 16px; /* espaço entre imagem e texto */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* garante quebra no mobile */
+  }
+  
+  .titulo-img {
+    width: 70px; /* ou o tamanho desejado */
+    height: auto;
+    padding-top: 1.5rem;
+    
+  }
+  
+  .titulo-header-h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    align-items: center;
+    text-align: center;
+  }

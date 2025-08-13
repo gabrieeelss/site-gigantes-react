@@ -1,3 +1,9 @@
+header, .nav-bar, .nav-list, .dropdown-menu {
+  position: relative;
+  z-index: 10000; /* garante que o menu fique na frente */
+}
+
+
 header {
   display: flex;
   align-items: center;
@@ -6,7 +12,7 @@ header {
   padding: 0 20px;
   flex-wrap: wrap;
   position: relative;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .logo img {

@@ -1,0 +1,20 @@
+{
+  "fiec": [
+  { "nome": "Proposta Edital 03/2020", "arquivo": "Proposta edital 03-2020.pdf" },
+  { "nome": "Plano de Trabalho Edital 03/2020", "arquivo": "plano de trabalho edital 03-2020.pdf" },
+  { "nome": "Termo de Fomento Edital 01/2021", "arquivo": "termo de fomento edital 01-2021.pdf" },
+  { "nome": "Proposta Edital 01/2021", "arquivo": "proposta edital 01-2021.pdf" },
+  { "nome": "Termo de Fomento Edital 04/2022", "arquivo": "termo de fomento 04-2022.pdf" },
+  { "nome": "Plano de Trabalho Edital 04/2022", "arquivo": "Plano de trabalho 04-2022.pdf" },
+  { "nome": "Termo de Fomento Edital 01/2024", "arquivo": "Termo de Fomento 01-2024.pdf" },
+  { "nome": "Plano de Trabalho Edital 01/2024", "arquivo": "plano de trabalho 01-2024.pdf" }
+  ],
+  "cbcp": [
+    { "nome": "Projeto CBCP Paradesporto 2024", "arquivo": "projeto-cbcp-2024.pdf" }
+  ],
+  "lei": [
+    { "nome": "Projeto Aprovado", "arquivo": "PROJETO APROVADO - Rugby em Cadeira de Rodas Gigantes.pdf" },
+    { "nome": "Publicação no DOU", "arquivo": "DOU - Rugby em Cadeira de Rodas Gigantes.pdf" },
+    { "nome": "Retificação do Valor do Projeto", "arquivo": "RETIFICAÇÃO DOU - VL DO PROJETO - 786.014.72.pdf" }
+  ]
+}

@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* === SEÇÃO EQUIPE GERAL === */
+  .equipe-section {
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .equipe-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .container-equipe {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* === TÍTULOS === */
+  .titulo h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  }
+  
+  .subtitulo {
+    font-size: 2rem;
+    margin: 20px 0 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* === CARROSSEL === */
+  .carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .carousel-container {
+    overflow: hidden;
+    flex: 1;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+  
+  /* === CARD GERAL === */
+  .card {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 0 0 auto; /* Importante para que o flexbox não estique os cards */
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 260px; /* Largura padrão para 3 cards em 1200px - (20px*2) de gap */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    font-size: 1.5rem;
+    color: #004080;
+    margin: 10px 0 5px;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+  }
+  
+  /* === SOCIAL ICONS === */
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons img {
+    width: 28px;
+    max-width: 35px;
+    margin: 0 6px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 6px #264bba);
+  }
+  
+  /* === BOTÕES DO CARROSSEL SOBRE A IMAGEM === */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(14, 95, 216, 0.7);
+    border: none;
+    font-size: 2rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    z-index: 10;
+    border: 1px solid black;
+    width: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.75;
+  }
+  
+  .carousel-btn.prev {
+    left: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-btn.next {
+    right: 5px;
+    box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-btn:hover {
+    background: rgb(13, 0, 255);
+    opacity: 1;
+  }
+  
+  /* IMAGEM NO TITULO */
+  .titulo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .titulo-img {
+    width: 70px;
+    height: auto;
+  }
+  
+  .titulo-h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+  }
+  
+  /* === RESPONSIVIDADE === */
+  
+  /* Telas muito grandes (ex: 1400px+) */
+  @media (min-width: 1400px) {
+    .card {
+      /* Largura para 4 cards: 100% / 4 = 25%. Subtrai o gap (20px). */
+      /* width: calc(25% - 15px); Isso não funcionará perfeitamente com a sua lógica de JS. */
+      /* Mantenha o width fixo e deixe o JS calcular a quantidade */
+      width: 260px; 
+    }
+  }
+  
+  /* Telas grandes (1025px - 1399px) -> 3 cards */
+  @media (min-width: 1025px) and (max-width: 1399px) {
+    .card {
+      width: 260px;
+    }
+  }
+  
+  /* Tablets (769px - 1024px) -> 2 cards */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+      /* Largura para 2 cards: 100% / 2 = 50%. Subtrai o gap (20px). */
+      width: calc(50% - 10px);
+    }
+  }
+  
+  /* Celulares (481px - 768px) -> 1 card */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .card {
+      /* Largura para 1 card: 100%. */
+      width: 100%;
+    }
+  }
+  
+  /* Telas pequenas (até 480px) -> 1 card */
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+      padding: 15px;
+    }
+    .carousel-btn {
+      width: 25px;
+      height: 40px;
+      font-size: 1.3rem;
+    }
+  }

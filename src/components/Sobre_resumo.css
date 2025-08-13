@@ -35,7 +35,7 @@ h2 {
 }
 
 /* Notícias */
-.noticias ul { /* Correção: a classe no HTML é noticias-index, mas essa regra é genérica para 'noticias' */
+.noticias-index ul {
   max-width: 800px;
   margin: 0 auto 1rem;
   list-style: none;

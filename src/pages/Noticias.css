@@ -1,0 +1,159 @@
+/* === Geral e Estrutura === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.noticias {
+  padding: 40px 20px;
+}
+
+.container-noticias {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Título e Header === */
+.noticias-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.noticias-img {
+  width: 80px;
+  height: auto;
+}
+
+.titulo-h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* === Grid de Notícias === */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #1e3c64;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 10px 16px;
+  color: #ffffffd6;
+  text-align: center;
+}
+
+/* === Modal (Corrigido) === */
+.modal {
+  position: fixed;
+  z-index: 10000; /* Z-index alto para sobrepor o menu */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente escurecido */
+  display: flex;
+  align-items: flex-start; /* Alinha no topo */
+  justify-content: center;
+  overflow-y: auto; /* Permite rolagem no modal se o conteúdo for grande */
+  padding: 20px 0;
+}
+
+.modal-content {
+  background-color: #1e3c64;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 700px; /* Largura reduzida para não ser tão grande */
+  width: 90%;
+  color: #ffffff;
+  position: relative;
+  margin-top: 50px; /* Afasta o modal do topo */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content .fechar {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.modal-titulo {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+#modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+}
+
+#modal-descricao {
+  font-size: 1rem;
+  color: #f0f0f0;
+  text-align: justify;
+}
+
+/* === Responsividade do Modal === */
+@media (max-width: 768px) {
+  .modal {
+    padding: 10px 0;
+  }
+
+  .modal-content {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .modal-content .fechar {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+  
+  .modal-titulo {
+    font-size: 1.5rem;
+  }
+}
