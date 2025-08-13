@@ -35,7 +35,7 @@ function Contato() {
             <textarea name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
 
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://seusite.com.br/obrigado.html" />
+            <input type="hidden" name="_next" value="#" />
 
             <button type="submit">Enviar Mensagem</button>
           </form>

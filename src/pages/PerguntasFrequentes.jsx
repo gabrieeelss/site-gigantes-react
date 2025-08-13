@@ -95,7 +95,7 @@ function PerguntasFrequentes() {
 
     <div className="faq-item">
       <button className="faq-question">13- Como posso entrar em contato para participar da associação?</button>
-      <div className="faq-answer">Através do formulário na página <a   href="contato.html" style={{ fontWeight: 'bold', color: 'blue' }}>  CONTATO</a> ou por WhatsApp clicando <a href="https://wa.me/5519997487329" style={{ fontWeight: 'bold', color: 'blue' }}>AQUI</a>.</div>
+      <div className="faq-answer">Através do formulário na página <a   href="/Contato" style={{ fontWeight: 'bold', color: 'blue' }}>  CONTATO</a> ou por WhatsApp clicando <a href="https://wa.me/5519997487329" style={{ fontWeight: 'bold', color: 'blue' }}>AQUI</a>.</div>
     </div>
 
     <div className="faq-item">

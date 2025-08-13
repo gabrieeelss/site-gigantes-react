@@ -1,104 +1,115 @@
 import { useEffect, useState, useRef } from "react";
 import './Equipe.css';
 
+// Dados de exemplo (substitua pelos seus dados reais)
+const atletasData = Array.from({ length: 10 }, (_, i) => ({ id: i, nome: `Atleta ${i + 1}` }));
+const profissionaisData = Array.from({ length: 8 }, (_, i) => ({ id: i, nome: `Profissional ${i + 1}` }));
+
 function Equipe() {
   const [indexAtletas, setIndexAtletas] = useState(0);
   const [indexProfissionais, setIndexProfissionais] = useState(0);
+  const [cardsVisiveisAtletas, setCardsVisiveisAtletas] = useState(1);
+  const [cardsVisiveisProf, setCardsVisiveisProf] = useState(1);
 
   const atletasTrackRef = useRef(null);
   const profTrackRef = useRef(null);
 
-  // Estado para quantidade visível (cards por vez)
-  const [visibleAtletas, setVisibleAtletas] = useState(3);
-  const [visibleProf, setVisibleProf] = useState(3);
-
-  // Função para atualizar o número de cards visíveis com base no tamanho da viewport
-  const calcularVisiveis = (containerRef, setVisible) => {
-    if (!containerRef.current) return;
-    const containerWidth = containerRef.current.offsetWidth;
-    const card = containerRef.current.querySelector(".card");
-    if (!card) return;
-    const style = getComputedStyle(card);
-    const cardWidth = card.offsetWidth + parseFloat(style.marginRight);
-    const count = Math.floor(containerWidth / cardWidth);
-    setVisible(count > 0 ? count : 1);
-  };
-
-  // Atualiza o carrossel (transform) com base no index e visible
-  const updateCarousel = (trackRef, index, visible) => {
+  // Função para calcular o número de cards visíveis na tela
+  const calcularVisiveis = (trackRef, setCardsVisiveis) => {
+    if (!trackRef.current) return;
     const track = trackRef.current;
-    if (!track) return;
-    const cards = track.querySelectorAll(".card");
+    const container = track.parentElement;
+    if (!container) return;
+
+    const cards = track.querySelectorAll(".card-equipe");
     if (cards.length === 0) return;
 
-    const cardStyle = getComputedStyle(cards[0]);
-    const marginRight = parseFloat(cardStyle.marginRight) || 20;
-    const cardWidth = cards[0].offsetWidth + marginRight;
-    const maxIndex = cards.length - visible;
-    const validIndex = Math.min(Math.max(index, 0), maxIndex >= 0 ? maxIndex : 0);
+    const containerWidth = container.offsetWidth;
+    const cardWidth = cards[0].offsetWidth;
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 0;
 
-    track.style.transform = `translateX(-${validIndex * cardWidth}px)`;
+    const count = Math.floor((containerWidth + gap) / (cardWidth + gap));
+    setCardsVisiveis(count > 0 ? count : 1);
   };
 
-  // Atualiza visible cards ao carregar e quando janela redimensionar
+  // Funções para atualizar o carrossel (transform)
+  const updateCarousel = (trackRef, index, cardsVisiveis) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const cards = track.querySelectorAll(".card-equipe");
+    if (cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth;
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 0;
+    
+    // Calcula o `maxIndex` dinamicamente com base nos cards visíveis
+    const maxIndex = Math.max(0, cards.length - cardsVisiveis);
+    const validIndex = Math.min(Math.max(index, 0), maxIndex);
+
+    track.style.transform = `translateX(-${validIndex * (cardWidth + gap)}px)`;
+  };
+
+  // Efeito para calcular cards visíveis ao carregar e redimensionar
   useEffect(() => {
     const handleResize = () => {
-      calcularVisiveis(atletasTrackRef, setVisibleAtletas);
-      calcularVisiveis(profTrackRef, setVisibleProf);
+      calcularVisiveis(atletasTrackRef, setCardsVisiveisAtletas);
+      calcularVisiveis(profTrackRef, setCardsVisiveisProf);
     };
 
-    handleResize(); // roda na montagem
-
+    handleResize(); // Roda na montagem
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Auto-slide interval com base no visible dinâmico
+  // Efeitos para atualizar o `transform`
+  useEffect(() => {
+    updateCarousel(atletasTrackRef, indexAtletas, cardsVisiveisAtletas);
+  }, [indexAtletas, cardsVisiveisAtletas]);
+
+  useEffect(() => {
+    updateCarousel(profTrackRef, indexProfissionais, cardsVisiveisProf);
+  }, [indexProfissionais, cardsVisiveisProf]);
+
+  // Efeito para o auto-slide
   useEffect(() => {
     const intervalAtletas = setInterval(() => {
-      const track = atletasTrackRef.current;
-      if (!track) return;
-      const cards = track.querySelectorAll(".card");
-      const maxIndex = cards.length - visibleAtletas;
-      setIndexAtletas(prev => (prev < maxIndex ? prev + 1 : 0));
+      setIndexAtletas(prev => {
+        const track = atletasTrackRef.current;
+        if (!track) return prev;
+        const cards = track.querySelectorAll(".card-equipe");
+        const maxIndex = Math.max(0, cards.length - cardsVisiveisAtletas);
+        return prev < maxIndex ? prev + 1 : 0;
+      });
     }, 2500);
 
     const intervalProf = setInterval(() => {
-      const track = profTrackRef.current;
-      if (!track) return;
-      const cards = track.querySelectorAll(".card");
-      const maxIndex = cards.length - visibleProf;
-      setIndexProfissionais(prev => (prev < maxIndex ? prev + 1 : 0));
+      setIndexProfissionais(prev => {
+        const track = profTrackRef.current;
+        if (!track) return prev;
+        const cards = track.querySelectorAll(".card-equipe");
+        const maxIndex = Math.max(0, cards.length - cardsVisiveisProf);
+        return prev < maxIndex ? prev + 1 : 0;
+      });
     }, 3500);
 
     return () => {
       clearInterval(intervalAtletas);
       clearInterval(intervalProf);
     };
-  }, [visibleAtletas, visibleProf]);
-
-  // Atualiza transform quando index ou visible mudam
-  useEffect(() => {
-    updateCarousel(atletasTrackRef, indexAtletas, visibleAtletas);
-  }, [indexAtletas, visibleAtletas]);
-
-  useEffect(() => {
-    updateCarousel(profTrackRef, indexProfissionais, visibleProf);
-  }, [indexProfissionais, visibleProf]);
+  }, [cardsVisiveisAtletas, cardsVisiveisProf]);
 
   // Handlers para botões
-  const handlePrev = (setIndex, index) => {
-    if (index > 0) setIndex(index - 1);
-  };
+  const handlePrev = (setIndex) => setIndex(prev => Math.max(0, prev - 1));
 
-  const handleNext = (setIndex, index, trackRef, visible) => {
+  const handleNext = (setIndex, trackRef, cardsVisiveis) => {
     const track = trackRef.current;
     if (!track) return;
-    const cards = track.querySelectorAll(".card");
-    const maxIndex = cards.length - visible;
-    if (index < maxIndex) setIndex(index + 1);
+    const cards = track.querySelectorAll(".card-equipe");
+    const maxIndex = Math.max(0, cards.length - cardsVisiveis);
+    setIndex(prev => Math.min(prev + 1, maxIndex));
   };
-
   return (
     <section className="equipe-section">
       <div className="container-equipe">
@@ -109,7 +120,7 @@ function Equipe() {
 
         {/* === CARROSSEL DE ATLETAS === */}
         <h2 className="subtitulo">Atletas</h2>
-        <div className="carousel-wrapper">
+        <div className="carousel-wrapper-equipe">
           <button
             className="carousel-btn prev atletas"
             onClick={() => handlePrev(setIndexAtletas, indexAtletas)}
@@ -124,7 +135,7 @@ function Equipe() {
               ref={atletasTrackRef}
               style={{ transition: "transform 0.3s ease" }}
             >
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/giuriato.png" alt="Alexandre Giuriato" />
                 <h2>Alexandre Giuriato</h2>
                 <p><strong>Classificação:</strong> 3.0</p>
@@ -134,7 +145,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/gabriel.png" alt="Gabriel Simplicio" />
                 <h2>Gabriel Simplicio</h2>
                 <p><strong>Classificação:</strong> 0.5</p>
@@ -144,7 +155,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/adilson.png" alt="Adilson Ramos" />
                 <h2>Adilson Ramos</h2>
                 <p><strong>Classificação:</strong> 2.0</p>
@@ -154,7 +165,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/armando.png" alt="Armando Silva" />
                 <h2>Armando Silva</h2>
                 <p><strong>Classificação:</strong> 0.5</p>
@@ -164,7 +175,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/denis.png" alt="Denis Cairiac" />
                 <h2>Denis Cairiac</h2>
                 <p><strong>Classificação:</strong> 2.0</p>
@@ -174,7 +185,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/japa.png" alt="Alexandre Taniguchi" />
                 <h2>Alexandre Taniguchi</h2>
                 <p><strong>Classificação:</strong> 2.5</p>
@@ -184,7 +195,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/giuliano.png" alt="Giuliano Castro" />
                 <h2>Giuliano Castro</h2>
                 <p><strong>Classificação:</strong> 2.0</p>
@@ -194,7 +205,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/leonardo.png" alt="Leonardo Pacca" />
                 <h2>Leonardo Pacca</h2>
                 <p><strong>Classificação:</strong> 0.5</p>
@@ -204,7 +215,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/paulo.jpg" alt="Paulo Costa" />
                 <h2>Paulo Costa</h2>
                 <p><strong>Classificação:</strong> 1.0</p>
@@ -214,7 +225,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/ruth.png" alt="Ruth Borges" />
                 <h2>Ruth Borges</h2>
                 <p><strong>Classificação:</strong> 1.0(F)</p>
@@ -224,7 +235,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/renata.jpg" alt="Renata Rubin" />
                 <h2>Renata Rubin</h2>
                 <p><strong>Classificação:</strong> ---(F)</p>
@@ -234,7 +245,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/rodolfo.png" alt="Rodolfo Polidoro" />
                 <h2>Rodolfo Polidoro</h2>
                 <p><strong>Classificação:</strong> 2.5</p>
@@ -244,7 +255,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/thalys.png" alt="Thalys Jucá" />
                 <h2>Thalys Jucá</h2>
                 <p><strong>Classificação:</strong> 3.5</p>
@@ -267,7 +278,7 @@ function Equipe() {
 
         {/* === CARROSSEL DE PROFISSIONAIS === */}
         <h2 className="subtitulo">Profissionais</h2>
-        <div className="carousel-wrapper">
+        <div className="carousel-wrapper-equipe">
           <button
             className="carousel-btn prev prof"
             onClick={() => handlePrev(setIndexProfissionais, indexProfissionais)}
@@ -282,7 +293,7 @@ function Equipe() {
               ref={profTrackRef}
               style={{ transition: "transform 0.3s ease" }}
             >
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/ana-paula.png" alt="Ana Paula Boito Ramkrapes" />
                 <h2>Ana Paula Boito Ramkrapes</h2>
                 <p><strong>Função/Profissão:</strong> Técnica/Educadora Física</p>
@@ -291,7 +302,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/renan.png" alt="Renan Matias" />
                 <h2>Renan Matias</h2>
                 <p><strong>Função/Profissão:</strong> Staff/Mecânico</p>
@@ -300,7 +311,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/edilene.png" alt="Edilene Nascimento" />
                 <h2>Edilene Nascimento</h2>
                 <p><strong>Profissão:</strong> Enfermeira</p>
@@ -309,7 +320,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/marta.jpg" alt="Marta Ramos" />
                 <h2>Marta Prando Ramos</h2>
                 <p><strong>Profissão:</strong> Enfermeira</p>
@@ -318,7 +329,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/luisa.png" alt="Luisa Cavalieri" />
                 <h2>Luísa Cançado Cavalieiri</h2>
                 <p><strong>Profissão:</strong> Fisioterapeuta</p>
@@ -327,7 +338,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/giovana.png" alt="Giovana Barbosa" />
                 <h2>Giovana Barbosa</h2>
                 <p><strong>Profissão:</strong> Fisioterapeuta</p>
@@ -336,7 +347,7 @@ function Equipe() {
                 </div>
               </div>
 
-              <div className="card">
+              <div className="card-equipe">
                 <img src="./img/equipe/elison.png" alt="Elison Vaz" />
                 <h2>Elison Vaz</h2>
                 <p><strong>Profissão:</strong> Staff/Mecanico</p>

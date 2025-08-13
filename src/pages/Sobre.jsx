@@ -1,5 +1,5 @@
 import './Sobre.css';
-
+import VLibras from '../components/VLibras';
 function Sobre() {
 
     return (
@@ -46,13 +46,13 @@ function Sobre() {
                             <li>Bi-campeões no Campeonato Brasileiro.</li>
                             <li>Pentacampeões do Torneio Regional Paulista...</li>
                             <li>Atletas representando Campinas e o Brasil...</li>
-                            <a href="titulos.html">Saiba mais...</a>
+                            <a href="/Titulos">Saiba mais...</a>
                         </ul>
 
                         <blockquote><strong>#SomosGigantes</strong></blockquote>
 
                         <p>Quer fazer parte dessa jornada?</p>
-                        <a href="contato.html">Entre em Contato conosco:</a>
+                        <a href="/Contato">Entre em Contato conosco:</a>
                         <p>📩 Contato: <a href="mailto:aecsgigantes@gmail.com">aecsgigantes@gmail.com</a> |
                             WhatsApp: <a href="https://wa.me/5519997487329" target="_blank">(19) 99748‑7329</a></p>
 
@@ -60,7 +60,7 @@ function Sobre() {
                     </div>
                 </div>
             </section>
-
+            <VLibras />
         </>
     )
 }

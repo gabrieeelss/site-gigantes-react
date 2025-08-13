@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
   }
-  
   /* === SEÇÃO EQUIPE GERAL === */
   .equipe-section {
     position: relative;
@@ -48,14 +47,10 @@ body {
   }
   
   /* === CARROSSEL === */
-  .carousel-wrapper {
+  .carousel-wrapper-equipe {
     position: relative;
     max-width: 1200px;
     margin: 0 auto 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
   }
   
   .carousel-container {
@@ -67,40 +62,40 @@ body {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease-in-out;
-    will-change: transform;
   }
   
   /* === CARD GERAL === */
-  .card {
+  .card-equipe {
     background-color: rgba(255, 255, 255, 0.95);
     color: #000;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     padding: 20px;
     flex: 0 0 auto; /* Importante para que o flexbox não estique os cards */
+    flex-basis: 260px;
+    width: 260px;
     text-align: center;
     transition: transform 0.3s ease;
-    width: 260px; /* Largura padrão para 3 cards em 1200px - (20px*2) de gap */
   }
   
-  .card:hover {
+  .card-equipe:hover {
     transform: scale(1.05);
   }
   
-  .card img {
+  .card-equipe img {
     width: 100%;
     height: auto;
     border-radius: 12px;
     margin-bottom: 10px;
   }
   
-  .card h2 {
+  .card-equipe h2 {
     font-size: 1.5rem;
     color: #004080;
     margin: 10px 0 5px;
   }
   
-  .card p {
+  .card-equipe p {
     font-size: 0.95rem;
     margin: 5px 0;
   }
@@ -136,27 +131,18 @@ body {
     transition: background 0.3s ease;
     z-index: 10;
     border: 1px solid black;
-    width: 40px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.75;
   }
   
   .carousel-btn.prev {
-    left: 5px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    left: 10px;
   }
   
   .carousel-btn.next {
-    right: 5px;
-    box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.5);
+    right: 0;
   }
   
   .carousel-btn:hover {
     background: rgb(13, 0, 255);
-    opacity: 1;
   }
   
   /* IMAGEM NO TITULO */
@@ -184,7 +170,7 @@ body {
   
   /* Telas muito grandes (ex: 1400px+) */
   @media (min-width: 1400px) {
-    .card {
+    .card-equipe {
       /* Largura para 4 cards: 100% / 4 = 25%. Subtrai o gap (20px). */
       /* width: calc(25% - 15px); Isso não funcionará perfeitamente com a sua lógica de JS. */
       /* Mantenha o width fixo e deixe o JS calcular a quantidade */
@@ -194,14 +180,14 @@ body {
   
   /* Telas grandes (1025px - 1399px) -> 3 cards */
   @media (min-width: 1025px) and (max-width: 1399px) {
-    .card {
+    .card-equipe {
       width: 260px;
     }
   }
   
   /* Tablets (769px - 1024px) -> 2 cards */
   @media (min-width: 769px) and (max-width: 1024px) {
-    .card {
+    .card-equipe {
       /* Largura para 2 cards: 100% / 2 = 50%. Subtrai o gap (20px). */
       width: calc(50% - 10px);
     }
@@ -209,7 +195,7 @@ body {
   
   /* Celulares (481px - 768px) -> 1 card */
   @media (min-width: 481px) and (max-width: 768px) {
-    .card {
+    .card-equipe {
       /* Largura para 1 card: 100%. */
       width: 100%;
     }
@@ -217,7 +203,7 @@ body {
   
   /* Telas pequenas (até 480px) -> 1 card */
   @media (max-width: 480px) {
-    .card {
+    .card-equipe {
       width: 100%;
       padding: 15px;
     }

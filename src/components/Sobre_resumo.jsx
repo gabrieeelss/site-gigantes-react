@@ -39,7 +39,7 @@ function Sobre_resumo() {
         <div className="container">
           <h2>Quem somos</h2>
           <p>A AECS Gigantes é uma entidade sem fins lucrativos dedicada ao desenvolvimento do Rugby em Cadeira de Rodas, promovendo inclusão e superação através do esporte.</p>
-          <a href="sobre.html" className="btn-link">Saiba mais</a>
+          <a href="/Sobre" className="btn-link">Saiba mais</a>
         </div>
       </section>
 
@@ -58,7 +58,7 @@ function Sobre_resumo() {
               <li>Carregando notícias...</li>
             )}
           </ul>
-          <a href="noticias.html" className="btn-link">Ver todas as notícias</a>
+          <a href="/Noticias" className="btn-link">Ver todas as notícias</a>
         </div>
       </section>
 
@@ -76,7 +76,7 @@ function Sobre_resumo() {
         <div className="container">
           <h2>Quer fazer parte?</h2>
           <p>Seja atleta, voluntário ou apoiador — sua participação é essencial para continuarmos crescendo e transformando vidas!</p>
-          <a href="contato.html" className="btn-cta">Entre em contato</a>
+          <a href="/Contato" className="btn-cta">Entre em contato</a>
         </div>
       </section>
     </>

@@ -48,7 +48,7 @@ function Noticias() {
           {noticias.map((noticia, index) => (
             <div
               key={index}
-              className="card"
+              className="card-noticias"
               onClick={() => abrirModal(noticia)}
             >
               <img src={noticia.imagem} alt={noticia.titulo} />
@@ -59,7 +59,7 @@ function Noticias() {
       </div>
 
       {modalAberto && noticiaSelecionada && (
-        <div id="modal-noticia" className="modal" onClick={fecharModal}>
+        <div id="modal-noticia" className="modal-noticias" onClick={fecharModal}>
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}

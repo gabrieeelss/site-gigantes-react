@@ -68,7 +68,7 @@ function Menu() {
 
       <nav id="mobile-menu" className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul className="nav-list">
-          <li className="nav-item"><a href="/Home">Home</a></li>
+          <li className="nav-item"><a href="/">Home</a></li>
           <li className="nav-item dropdown">
             <button 
               className="nav-link dropdown-toggle" 

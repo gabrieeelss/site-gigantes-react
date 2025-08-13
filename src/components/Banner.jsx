@@ -61,7 +61,7 @@ function Banner() {
     <>
       <section className="hero-carousel">
         <div className="hero-carousel-content">
-          <div className="carousel-wrapper">
+          <div className="carousel-wrapper-home">
             <button className="carousel-btn prev" aria-label="Anterior" onClick={showPrevSlide}>
               &#10094;
             </button>
@@ -107,7 +107,7 @@ function Banner() {
           <div className="hero-text">
             <h1>#SomosGigantes</h1>
             <p>Rugby em cadeira de rodas: superação, inclusão e espírito de equipe</p>
-            <a href="sobre.html" className="btn-cta">Conheça nossa história</a>
+            <a href="/Sobre" className="btn-cta">Conheça nossa história</a>
             <br />
             <br />
             <div className="social-icons">
