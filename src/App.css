@@ -14,28 +14,3 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* Botão do VLibras sempre visível */
-[data-vw-access-button] {
-  position: fixed !important;
-  bottom: 12px !important;
-  right: 12px !important;
-  z-index: 999999 !important;
-}
-
-/* Janela do plugin */
-[data-vw-plugin-wrapper] {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  z-index: 999999 !important;
-}
-
-/* Evita corte por overflow nos containers */
-[data-vw="true"] {
-  position: static !important;
-}
-
-/* Para prevenir problemas de overflow do body */
-html, body {
-  overflow: visible !important;
-}
