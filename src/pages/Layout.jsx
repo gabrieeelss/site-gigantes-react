@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import Rodape from "../components/Rodape";
 import Menu from "../components/Menu";
+import WppButton from "../components/WppButton";
 
 function Layout() {
     return (
@@ -8,6 +9,7 @@ function Layout() {
             <div className="container">
                 <Menu />
                 <Outlet />
+                <WppButton />
             </div>
             <Rodape />
         </>
