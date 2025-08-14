@@ -24,7 +24,7 @@ function AtasEEstatutos() {
       <div className="pdf-grid">
         <div className="pdf-coluna pdf-coluna-atas">
           <div className="titulo-header">
-            <img src="../src/assets/img/geral/documentos.png" className="titulo-img" alt="Documentos" />
+            <img src="../img/documentos.png" className="titulo-img" alt="Documentos" />
             <h1 className="titulo-header-h1">ATAS E ESTATUTO</h1>
           </div>
           <ul id="lista-pdfs" className="pdf-lista">

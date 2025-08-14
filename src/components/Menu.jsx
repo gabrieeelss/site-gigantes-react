@@ -22,7 +22,7 @@ function Menu() {
       <nav className="nav-bar">
         <div className="logo">
           <a href="/">
-            <img src="./src/assets/img/geral/aecs_logo.png" alt="AECS Gigantes Logo" />
+            <img src="./img/aecs_logo.png" alt="AECS Gigantes Logo" />
           </a>
         </div>
 

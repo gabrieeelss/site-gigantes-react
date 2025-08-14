@@ -8,7 +8,7 @@ function Rodape() {
       <footer className="rodape">
     <div className="container rodape-flex">
       <div className="img-left">
-        <img src="./src/assets/img/geral/SeloCBCP_BrancoH.png" alt="Logo CBCP" />
+        <img src="./img/SeloCBCP_BrancoH.png" alt="Logo CBCP" />
       </div>
 
       <div className="rodape-centro">
@@ -19,15 +19,15 @@ function Rodape() {
           </span>
           <div className="social-icons">
             <a href="https://facebook.com/gigantesrugbycr" target="_blank">
-              <img src="./src/assets/img/geral/Facebook_logo_(square).png" alt="Facebook" /></a>
+              <img src="./img/Facebook_logo_(square).png" alt="Facebook" /></a>
             <a href="https://instagram.com/gigantes_rugby" target="_blank">
-              <img src="./src/assets/img/geral/Instagram_icon.png" alt="Instagram" /></a>
+              <img src="./img/Instagram_icon.png" alt="Instagram" /></a>
           </div>
         </div>
       </div>
 
       <div className="img-right">
-        <img src="./src/assets/img/geral/Logo-Fiec.png" alt="Logo FIEC" />
+        <img src="./img/Logo-Fiec.png" alt="Logo FIEC" />
       </div>
     </div>
   </footer>
