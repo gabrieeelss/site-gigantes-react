@@ -15,7 +15,6 @@ import Noticias from '../src/pages/Noticias';
 import Projetos from '../src/pages/Projetos';
 import Sobre from '../src/pages/Sobre';
 import Titulos from '../src/pages/Titulos';
-import VLibras from './components/VLibras';
 
 function App() {
 
@@ -41,7 +40,6 @@ function App() {
       </Route>
       </Routes>
     </BrowserRouter>
-    <VLibras />
     </>
   )
 }

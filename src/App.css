@@ -14,3 +14,23 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Garante que o botão VLibras fique sempre visível */
+[vw-access-button] {
+  position: fixed !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  z-index: 999999 !important;
+}
+
+/* Wrapper do plugin */
+[vw-plugin-wrapper] {
+  z-index: 999999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+/* Evita que o botão seja cortado por overflow: hidden */
+[vw], [data-vw="true"] {
+  position: static !important;
+}
