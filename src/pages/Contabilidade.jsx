@@ -19,7 +19,7 @@ function Contabilidade() {
   return (
     <div className="pdf-section">
       <div className="titulo-header">
-        <img src="../src/assets/img/geral/contabilidade.png" className="titulo-img" alt="Contabilidade" />
+        <img src="./img/contabilidade.png" className="titulo-img" alt="Contabilidade" />
         <h1 className="titulo-header-h1">DRE E BALANÇO PATRIMONIAL</h1>
       </div>
 

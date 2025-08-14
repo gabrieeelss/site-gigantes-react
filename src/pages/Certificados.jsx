@@ -25,7 +25,7 @@ function Certificados() {
     <section className="pdf-section">
       <div className="pdf-coluna pdf-coluna-certificados">
         <div className="titulo-header">
-          <img src="../src/assets/img/geral/certificado.png" className="titulo-img" alt="Certificados" />
+          <img src="./img/certificado.png" className="titulo-img" alt="Certificados" />
           <h1 className="titulo-header-h1">CERTIFICADOS</h1>
         </div>
         <ul id="lista-pdfs" className="pdf-lista">

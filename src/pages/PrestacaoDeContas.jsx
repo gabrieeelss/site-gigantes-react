@@ -20,7 +20,7 @@ function PrestacaoDeContas() {
   return (
     <section className="pdf-section">
       <div className="titulo-header">
-        <img src="../src/assets/img/geral/lista-de-itens.png" className="titulo-img" alt="Prestação de Contas" />
+        <img src="./img/lista-de-itens.png" className="titulo-img" alt="Prestação de Contas" />
         <h1 className="titulo-header-h1">Prestação de Contas</h1>
       </div>
       <div className="pdf-grid">

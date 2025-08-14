@@ -26,7 +26,7 @@ function PerguntasFrequentes() {
     <>
     <div className="faq-titulo">
       <div className="titulo-header">
-        <img src="../src/assets/img/geral/perguntas-frequentes.png" className="titulo-img" />
+        <img src="./img/perguntas-frequentes.png" className="titulo-img" />
       <h1 className="titulo-header-h1">Perguntas Frequentes</h1>
       </div>
     <p>Confira as dúvidas mais comuns sobre o nosso projeto</p>

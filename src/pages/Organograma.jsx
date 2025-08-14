@@ -6,7 +6,7 @@ function Organograma() {
 <section className="organograma">
   <div className="container-org">
     <div className="organograma-header">
-  <img src="../src/assets/img/geral/organograma.png" className="organograma-img" />
+  <img src="./img/organograma.png" className="organograma-img" />
   <h1 className="titulo-h1">Organograma AECS Gigantes</h1>
 </div>
 

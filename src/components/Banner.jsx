@@ -101,7 +101,7 @@ function Banner() {
           </div>
 
           <div className="hero-image-between">
-            <img src="./src/assets/img/geral/mascote2.svg" alt="Imagem entre carrossel e texto" className="img-neon-svg" />
+            <img src="./img/mascote2.svg" alt="Imagem entre carrossel e texto" className="img-neon-svg" />
           </div>
 
           <div className="hero-text">
@@ -112,10 +112,10 @@ function Banner() {
             <br />
             <div className="social-icons">
               <a href="https://facebook.com/gigantesrugbycr" target="_blank" rel="noopener noreferrer">
-                <img src="./src/assets/img/geral/Facebook_logo_(square).png" alt="Facebook" />
+                <img src="./img/Facebook_logo_(square).png" alt="Facebook" />
               </a>
               <a href="https://instagram.com/gigantes_rugby" target="_blank" rel="noopener noreferrer">
-                <img src="./src/assets/img/geral/Instagram_icon.png" alt="Instagram" />
+                <img src="./img/Instagram_icon.png" alt="Instagram" />
               </a>
             </div>
           </div>
