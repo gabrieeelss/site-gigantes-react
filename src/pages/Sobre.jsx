@@ -1,5 +1,4 @@
 import './Sobre.css';
-import VLibras from '../components/VLibras';
 function Sobre() {
 
     return (
@@ -60,7 +59,6 @@ function Sobre() {
                     </div>
                 </div>
             </section>
-            <VLibras />
         </>
     )
 }

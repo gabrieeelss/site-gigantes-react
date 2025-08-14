@@ -2,21 +2,18 @@ import { useEffect } from "react";
 
 export default function VLibras() {
   useEffect(() => {
-    const initVLibras = () => {
-      if (window.VLibras) {
-        new window.VLibras.Widget("https://vlibras.gov.br/app");
-      }
-    };
-
-    // Evita recarregar o script se já estiver no DOM
-    if (!document.querySelector('script[src="https://vlibras.gov.br/app/vlibras-plugin.js"]')) {
+    // Evita múltiplos carregamentos
+    if (!window.VLibras && !document.getElementById("vlibras-script")) {
       const script = document.createElement("script");
+      script.id = "vlibras-script";
       script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
       script.async = true;
-      script.onload = initVLibras;
+      script.onload = () => {
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      };
       document.body.appendChild(script);
-    } else {
-      initVLibras();
+    } else if (window.VLibras) {
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
     }
   }, []);
 
