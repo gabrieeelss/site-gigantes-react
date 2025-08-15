@@ -1,7 +1,7 @@
 .rodape {
   background-color: #72b8f5;
   color: #000000;
-  padding: 20px 20px;
+  padding: 30px 20px;
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -29,6 +29,7 @@
 .rodape-centro {
   flex: 1;
 }
+
 .img-left {
   flex: 1;
   display: flex;
@@ -47,7 +48,7 @@
 }
 
 .img-left img {
-  width: 350px;
+  width: 300px;
   height: auto;
 }
 
@@ -85,9 +86,8 @@
 
 .contato-social img {
   width: 30px;
-  height: auto;
+  height: 30px;
   transition: transform 0.3s ease, filter 0.3s ease;
-  margin: 0.2rem;
 }
 
 .social-icons img:hover {

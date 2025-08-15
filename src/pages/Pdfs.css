@@ -7,6 +7,14 @@
     gap: 1.5rem;
   }
   
+  #pdf-grid-contabilidade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1000px;
+    margin: auto;
+    gap: 0rem;
+  }
+
   .pdf-coluna h2 {
     font-size: 1.4rem;
     margin-bottom: 10px;
@@ -46,6 +54,7 @@
     width: fit-content;
     max-width: 100%;
   }
+
   .titulo-h1,
   .subtitulo-p {
     color: white;
