@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import './Banner.css';
+import CarrosselHome from './CarrosselHome';
 
 function Banner() {
   // Estado para controlar o slide atual
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   // Referências para os elementos do DOM
   const trackRef = useRef(null);
   const slidesRef = useRef([]);
@@ -17,7 +18,7 @@ function Banner() {
     if (slides.length === 0) return;
 
     let slideWidth = slides[0].getBoundingClientRect().width;
-    
+
     // Função para atualizar o carrossel
     const updateCarousel = () => {
       const offset = currentIndex * slideWidth;
@@ -66,33 +67,16 @@ function Banner() {
               &#10094;
             </button>
             <div className="carousel-track-container">
-              {/* Usa `ref` para referenciar o elemento */}
+              {/* GALERIA DO CARROSSEL */}
               <ul className="carousel-track" ref={trackRef}>
-                <li className="carousel-slide" ref={el => slidesRef.current[0] = el}>
-                  <img src="./img/galeria/galeria1.jpg" alt="Foto 1" />
-                </li>
-                <li className="carousel-slide" ref={el => slidesRef.current[1] = el}>
-                  <img src="./img/galeria/galeria2.jpg" alt="Foto 2" />
-                </li>
-                {/* Repita este padrão para os outros slides */}
-                <li className="carousel-slide" ref={el => slidesRef.current[2] = el}>
-                  <img src="./img/galeria/galeria3.jpg" alt="Foto 3" />
-                </li>
-                <li className="carousel-slide" ref={el => slidesRef.current[3] = el}>
-                  <img src="./img/galeria/galeria4.jpg" alt="Foto 4" />
-                </li>
-                <li className="carousel-slide" ref={el => slidesRef.current[4] = el}>
-                  <img src="./img/galeria/galeria5.jpg" alt="Foto 5" />
-                </li>
-                <li className="carousel-slide" ref={el => slidesRef.current[5] = el}>
-                  <img src="./img/galeria/galeria6.jpg" alt="Foto 6" />
-                </li>
-                <li className="carousel-slide" ref={el => slidesRef.current[6] = el}>
-                  <img src="./img/galeria/galeria7.jpg" alt="Foto 7" />
-                </li>
-                <li className="carousel-slide" ref={el => slidesRef.current[7] = el}>
-                  <img src="./img/galeria/galeria8.jpg" alt="Foto 8" />
-                </li>
+                <CarrosselHome imagem="./img/galeria/galeria1.jpg" slidesRef={slidesRef} index={0} />
+                <CarrosselHome imagem="./img/galeria/galeria2.jpg" slidesRef={slidesRef} index={1} />
+                <CarrosselHome imagem="./img/galeria/galeria3.jpg" slidesRef={slidesRef} index={2} />
+                <CarrosselHome imagem="./img/galeria/galeria4.jpg" slidesRef={slidesRef} index={3} />
+                <CarrosselHome imagem="./img/galeria/galeria5.jpg" slidesRef={slidesRef} index={4} />
+                <CarrosselHome imagem="./img/galeria/galeria6.jpg" slidesRef={slidesRef} index={5} />
+                <CarrosselHome imagem="./img/galeria/galeria7.jpg" slidesRef={slidesRef} index={6} />
+                <CarrosselHome imagem="./img/galeria/galeria8.jpg" slidesRef={slidesRef} index={7} />
               </ul>
             </div>
             <button className="carousel-btn next" aria-label="Próxima" onClick={showNextSlide}>
