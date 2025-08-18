@@ -94,7 +94,7 @@ function Banner() {
             <a href="/Sobre" className="btn-cta">Conheça nossa história</a>
             <br />
             <br />
-            <div className="social-icons">
+            <div className="social-icons-banner">
               <a href="https://facebook.com/gigantesrugbycr" target="_blank" rel="noopener noreferrer">
                 <img src="./img/Facebook_logo_(square).png" alt="Facebook" />
               </a>
