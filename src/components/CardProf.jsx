@@ -4,7 +4,7 @@ function  CardProf({imagem, nome, instagram, funcao}) {
     return (
         <>
             <div className="card-equipe">
-                <img src={imagem} alt={nome} />
+                <img src={imagem} alt={nome} className='foto-prof'/>
                 <h2>{nome}</h2>
                 <p><strong>Função/Profissão:</strong> {funcao}</p>
                 <div className="social-icons">

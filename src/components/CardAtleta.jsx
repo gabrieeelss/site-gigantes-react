@@ -4,7 +4,7 @@ function  CardAtleta({imagem, nome, classificacao, atletadesde, instagram}) {
     return (
         <>
             <div className="card-equipe">
-                <img src={imagem} alt={nome} />
+                <img src={imagem} alt={nome} className='foto-atleta' />
                 <h2>{nome}</h2>
                 <p><strong>Classificação:</strong> {classificacao}</p>
                 <p><strong>Atleta Desde:</strong> {atletadesde}</p>
